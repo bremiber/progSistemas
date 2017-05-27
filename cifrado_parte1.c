@@ -30,8 +30,33 @@ int main(){
 
 
 void cifrar(char a[TAMANIO], int b){
-	printf("cifando....\n");
-	return;
+	int i=0;
+	int resta=0;
+	int desp=0;
+	while(a[i]!='\0'){
+		if((a[i]>='A') && (a[i]<='Z')){
+			resta='Z'-a[i];
+			if(b>resta){
+				desp=b-resta-1;
+				a[i]='A'+desp;
+			}
+			else{
+				a[i]=a[i]+b;
+			}
+		}
+		else if((a[i]>='a') && (a[i]<='z')){
+			resta='z'-a[i];
+			if(b>resta){
+				desp=b-resta-1;
+				a[i]='a'+desp;
+			}
+			else{
+				a[i]=a[i]+b;
+			}
+		}
+		i++;
+	}
+	printf("\nMensaje cifrado: %s\n",a);
 }
 
 
